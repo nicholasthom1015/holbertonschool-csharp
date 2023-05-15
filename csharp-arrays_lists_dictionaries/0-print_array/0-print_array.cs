@@ -12,9 +12,8 @@ public class Array
         int[] res = new int[size];
         var output_string = "";
         for(int i = 0; i < size; i++)
-            output_string += "" + (res[i] = i) + (i == (size-1)?"":". ");
+            output_string += "" + (res[i] = i) + (i == (size-1)?"":" ");
         Console.WriteLine(output_string);
-        Console.WriteLine();
         return res;
     }
 }
