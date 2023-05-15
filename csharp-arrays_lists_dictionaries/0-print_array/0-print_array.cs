@@ -11,7 +11,7 @@ public class Array
         }
         int[] res = new int[size];
         for(int i = 0; i < size; i++)
-            Console.WriteLine("{0}{1}",(res[i] = i), i == (size-1)?"":" \n");
+            Console.WriteLine("{0}{1}\n",(res[i] = i), i == (size-1)?"":" ");
         Console.WriteLine();
         return res;
     }
