@@ -10,9 +10,11 @@ public class Array
             return null;
         }
         int[] res = new int[size];
+        var output_string = "";
         for(int i = 0; i < size; i++)
-            Console.WriteLine("{0}{1}",(res[i] = i), i == (size-1)?"":" ");
-        //Console.WriteLine();
+            output_string += "" + (res[i] = i) + (i == (size-1)?"":". ");
+        Console.WriteLine(output_string);
+        Console.WriteLine();
         return res;
     }
 }
