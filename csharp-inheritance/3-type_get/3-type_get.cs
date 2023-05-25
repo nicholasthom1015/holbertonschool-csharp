@@ -9,14 +9,14 @@ public class Obj
         PropertyInfo[] properties = objectType.GetProperties();
         MethodInfo[] methods = objectType.GetMethods();
 
-        Console.WriteLine($"Properties of {objectType.Name}:");
+        Console.WriteLine($"{objectType.Name} Properties:");
         foreach (var property in properties)
         {
             Console.WriteLine(property.Name);
         }
 
         Console.WriteLine();
-        Console.WriteLine($"Methods of {objectType.Name}:");
+        Console.WriteLine($"{objectType.Name} Methods:");
         foreach (var method in methods)
         {
             Console.WriteLine(method.Name);
