@@ -34,9 +34,3 @@ public class Rectangle : Shape
             height = value;
         }
     }
-
-    public override int Area()
-    {
-        return Width * Height;
-    }
-}
