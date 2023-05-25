@@ -42,7 +42,7 @@ public class Rectangle : Shape
 
     public override string ToString()
     {
-        return $"[Rectangle] {Width} / {Height}";
+        return $"[Square] {Width} / {Height}";
     }
 }
 public class Square : Rectangle
