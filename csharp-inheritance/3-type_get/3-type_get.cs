@@ -15,7 +15,6 @@ public class Obj
             Console.WriteLine(property.Name);
         }
 
-        Console.WriteLine();
         Console.WriteLine($"{objectType.Name} Methods:");
         foreach (var method in methods)
         {
