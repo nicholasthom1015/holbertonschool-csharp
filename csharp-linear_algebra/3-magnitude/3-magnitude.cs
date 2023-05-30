@@ -11,3 +11,18 @@ public class VectorMath {
         }
         
         double sumOfSquares = 0;
+        
+        // Calculate the sum of squares of the vector components
+        for (double component : vector) {
+            sumOfSquares += component * component;
+        }
+        
+        // Calculate the magnitude by taking the square root of the sum of squares
+        double magnitude = Math.sqrt(sumOfSquares);
+        
+        // Round the magnitude to the nearest hundredth
+        BigDecimal roundedMagnitude = new BigDecimal(magnitude).setScale(2, RoundingMode.HALF_UP);
+        
+        return roundedMagnitude.doubleValue();
+    }
+}
