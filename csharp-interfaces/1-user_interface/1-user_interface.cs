@@ -1,3 +1,5 @@
+using System
+
 ///<summary>Interface called IInteractive</summary>
 public interface IInteractive
 {
