@@ -1,55 +1,51 @@
-﻿using System;
+using System;
 
 
-/// <summary> Player class </summary>
+public delegate void CalculateHealth(float amount);
+
 public class Player
 {
-    /// <summary> Player name </summary>
-    protected string name;
-    /// <summary> Player maxHp </summary>
-    protected float maxHp;
-    /// <summary> Player hp </summary>
-    protected float hp;
+    private string name;
+    private float maxHp;
+    private float hp;
 
-    /// <summary> Player delegate </summary>
-    public delegate void CalculateHealth(float amount);
-
-    /// <summary> Player Constructor </summary>
-    public Player(string name="Player", float maxHp=100f)
+    public Player(string name, float maxHp)
     {
         this.name = name;
-        if( maxHp <= 0f){
-            Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
-            maxHp = 100f;
+        if (maxHp > 0)
+        {
+            this.maxHp = maxHp;
         }
-        this.maxHp = maxHp;
-        this.hp = this.maxHp;
+        else
+        {
+            this.maxHp = 100f;
+            Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
+        }
+        hp = this.maxHp;
     }
 
-    /// <summary> PrintHealth Method </summary>
     public void PrintHealth()
     {
-        Console.WriteLine("{0} has {1} / {2} health", name, hp, maxHp);
+        Console.WriteLine($"{name} has {hp} / {maxHp} health");
     }
 
-    /// <summary> TakeDamage Method </summary>
     public void TakeDamage(float damage)
     {
-        if( damage < 0f)
-            damage = 0f;
-            Console.WriteLine("{0} takes {1} damage!", name, damage);
-            hp -= damage;
-            hp = math.clamp(hp, 0f, maxHp);
+        if (damage < 0)
+        {
+            damage = 0;
+        }
+        hp -= damage;
+        Console.WriteLine($"{name} takes {damage} damage!");
     }
 
-    /// <summary> HealDamage Method </summary>
     public void HealDamage(float heal)
     {
-        if( heal < 0f)
-            heal = 0f;
-        Console.WriteLine("{0} heals {1} HP!", name, heal);
+        if (heal < 0)
+        {
+            heal = 0;
+        }
         hp += heal;
-        hp = math.clamp(hp, 0f, maxHp);
+        Console.WriteLine($"{name} heals {heal} HP!");
     }
-
 }
