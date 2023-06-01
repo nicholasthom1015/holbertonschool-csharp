@@ -1,7 +1,7 @@
 using System;
 
 /// <summary> Queue class </summary>
-public class Queue<T>
+class Queue<T>
 {
 
     class Node
